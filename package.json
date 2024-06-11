@@ -1,0 +1,29 @@
+{
+  "name": "mpesa-server",
+  "version": "1.0.0",
+  "description": "serves Mpesa daraja Api to app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "mpesa",
+    "daraja"
+  ],
+  "author": "Steve Gaita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SGGaita/mpesa-server/issues"
+  },
+  "homepage": "https://github.com/SGGaita/mpesa-server#readme",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
