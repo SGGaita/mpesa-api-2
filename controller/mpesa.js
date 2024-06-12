@@ -79,9 +79,9 @@ const mpesaSTKPush = async (req, res) => {
 
     const phone = req.body.phoneNumber;
     const amount = req.body.amount;
-    
 
-console.log("Test stk push", phone)
+
+    console.log("Test stk push", phone)
 
     const token = req.token
 
@@ -95,7 +95,7 @@ console.log("Test stk push", phone)
             "PartyA": phone,
             "PartyB": process.env.SHORTCODE,
             "PhoneNumber": phone,
-            "CallBackURL": "https://fuelapp2.netlify.app/callback",
+            "CallBackURL": "https://fuelapp2.netlify.app/api/callback",
             "AccountReference": `Fuel Pay`,
             "TransactionDesc": "Test",
         },
@@ -103,39 +103,34 @@ console.log("Test stk push", phone)
             headers: {
                 Authorization: `Bearer ${token}`
             }
-        }).then(async(response) => {
+        }).then(async (response) => {
 
-            res.status(200).send(response.data)
-
-            console.log("response",response.data)
+            console.log("response", response.data)
             let responseData = response.data
 
             res.status(200).send(responseData)
 
-    
-           
         }).catch((err) => {
             let err_status = err
-             console.log(err_status)
+            console.log(err_status)
             res.status(err_status).send({ message: err.response })
         }
-
         )
 
 }
 
 
-const lipaNaMpesaOnlineCallback =  async(req, res) => {
+const lipaNaMpesaOnlineCallback = async (req, res) => {
 
     //Get the transaction description
     let resultSTKData = req.body.Body.stkCallback
-    console.log("Stk resp",resultSTKData)
-    
-    
+    console.log("Stk resp", resultSTKData)
+
+
 };
 
 
-module.exports ={
+module.exports = {
     mpesaPassword,
     mpesaToken,
     lipaNaMpesaOnlineCallback,
