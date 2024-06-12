@@ -95,7 +95,7 @@ const mpesaSTKPush = async (req, res) => {
             "PartyA": phone,
             "PartyB": process.env.SHORTCODE,
             "PhoneNumber": phone,
-            "CallBackURL": "https://fuelapp2.netlify.app/api/callback",
+            "CallBackURL": "https://mpesaapi.netlify.app/api/callback",
             "AccountReference": `Fuel Pay`,
             "TransactionDesc": "Test",
         },
